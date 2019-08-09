@@ -19,12 +19,6 @@ var setZeroes = function(matrix) {
            }
         }
     }
-    // for(let item of columns.values()){
-    //     console.log(item)
-    // }
-    // for(let item of rows.values()){
-    //     console.log(item);
-    // }
     return matrix;
 };
 

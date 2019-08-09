@@ -9,9 +9,9 @@ var isValid = function(S) {
         S = temp;
     }
     const isFlag=(str)=>{
-         return str =='abc'||str =='';
+         return str =='';
     }
     return isFlag(S);
 
 };
-console.log(isValid("bac"));
+console.log(isValid("abcabcababcccc"));

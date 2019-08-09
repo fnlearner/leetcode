@@ -3,14 +3,9 @@
  * @return {boolean}
  */
 var canJump = function(nums) {
-    const length = nums.length;
     let lastIndex = nums.length-1;
-    const res = [];
     for(let i=lastIndex;i>=0;--i){
             if(nums[i]+i>=lastIndex){
-                // res.push(i);
-                // let result= canJump(nums.slice(0,i));
-                // res.push(result);
                 lastIndex = i;
             }
     }
