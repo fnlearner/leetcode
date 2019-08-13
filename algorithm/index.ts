@@ -117,7 +117,33 @@ var threeSum = function(nums:number[]) {
 // console.log(threeSum([-1,0,1,2,-1,-4]));
 
 var myPow = function(x:number, n:number) {
-    return x**n;
+    const powerWtidhExponent=(base,exponent)=>{
+        if(exponent===0){
+            return  1;
+        }
+        if(exponent===1){
+            return base;
+        }
+        let result = powerWtidhExponent(base,exponent>>1);
+        result*=result;
+        if(exponent&&0x1==1){
+            result*=base;
+        }
+        return result;
+    }
+    let isValid =false;
+    if(x<=0){
+        isValid =true;
+        return 0;
+    }
+
+    let result = powerWtidhExponent(x,n);
+    if(n<0){
+        result=1/result;
+    }else if(n==0){
+        result =1;
+    }
+    return result;
     //100+ms
 };
 
