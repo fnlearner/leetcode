@@ -13,7 +13,6 @@ var permute = function(nums) {
       result.push(start.concat(item));
     }
   }
-//   console.log(result)
   return result;
 };
 
