@@ -65,9 +65,9 @@ const obj = new Trie()
 // obj.insert('apple')
 // obj.insert('orange')
 // console.log()
-console.log(obj.search('o'))
-
-// console.log(obj.startsWith('app'))
-// console.log(obj.search('apple'))
-// console.log(obj)
-// console.log(obj.startsWith('app'))
+console.time('count')
+for(let i=0;i<2**30;i++){
+    obj.insert('apple')
+}
+console.timeEnd('count')
+// console.log(obj.search('o'))
