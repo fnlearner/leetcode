@@ -13,7 +13,7 @@ var Trie = function() {
  */
 Trie.prototype.insert = function(word) {
     let root = this
-    const toCharArray = word.split('')
+    const toCharArray = word.split('')//transform string to array
     for(let item of toCharArray){
         if(!root.child[item]){
              root.child[item] = new Trie()
@@ -66,7 +66,7 @@ const obj = new Trie()
 // obj.insert('orange')
 // console.log()
 console.time('count')
-for(let i=0;i<2**30;i++){
+for(let i=0;i<20;i++){
     obj.insert('apple')
 }
 console.timeEnd('count')

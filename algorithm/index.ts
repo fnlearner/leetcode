@@ -1165,17 +1165,6 @@ var twoSum = function(numbers, target) {
 // twoSum([2, 7, 11, 15],9)
 // console.log('twoSum([2, 7, 11, 15],9): ', twoSum([2, 7, 11, 15],9));
 
-/**
- * @param {number} rowIndex
- * @return {number[]}
- * 杨辉三角
- */
-var getRow = function(rowIndex:number) {
-    if(rowIndex==0) return [1];
-    if(rowIndex==1) return [1,1];
-};
-getRow(0)
-// console.log('getRow(0): ', getRow(0));
 
 /**
  * @param {string} s
@@ -1240,24 +1229,6 @@ var reverseWords = function(s) {
 };
 // reverseWords("Let's take LeetCode contest");
 
-
-/**
- * @param {number} N
- * @return {number}
- */
-var numDupDigitsAtMostN = function(N) {
-    // let reg=/(.)(\1)+/g;
-    // let count=0;
-    // for(let i =1;i<=N;i++){
-    //     let res=i.toString();
-    //     if(res.search(reg)!=-1){
-    //         count++;
-    //     }
-    // }
-    // console.log(count);
-    // return count;
-};
-numDupDigitsAtMostN(20);
 
 
 /**
