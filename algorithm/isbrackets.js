@@ -1,5 +1,4 @@
 var isValid = function (s) {
-    debugger;
     if (!s) {
         return true;
     }
