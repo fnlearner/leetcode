@@ -2,6 +2,7 @@
  * @param {number[]} nums
  * @param {number} target
  * @return {number}
+ * @description 假设按照升序排序的数组在预先未知的某个点上进行了旋转。 用二分搜索法来搜索旋转数组的target值
  */
 var search = function(nums, target) {
     const len = nums.length;
