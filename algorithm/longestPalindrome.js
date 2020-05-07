@@ -1,7 +1,7 @@
 /**
  * @param {string} s
  * @return {number}
- * 最长回文子串
+ * 最长回文子串长度
  */
 var longestPalindrome = function(s) {
     let str = '*'
@@ -45,10 +45,11 @@ var longestPalindrome = function(s) {
 
     //  return res<len?res+1:res
 };
+longestPalindrome('abccccdd')
 /**
  * 
  * @param {string} s
- * 最长回文串 
+ * 最长回文串 长度
  */
 const _longestPalindrome = s =>{
          const map = new Map()
@@ -64,4 +65,50 @@ const _longestPalindrome = s =>{
 
      return res<len?res+1:res
 }
-longestPalindrome('abccccdd')
+
+/**
+ * @param {string} s
+ * @return {string}
+ */
+
+function preProcess(str){
+    let len=str.length;
+    if(len==0) return '^$';
+    let strStart='^';
+    for(let i of str){
+        strStart+='#'+i;
+     }        
+     strStart+='#$'; 
+     return strStart;
+}
+function ___longestPalindrome(str){
+    let T=preProcess(str);
+    let len=T.length;
+    let P=[],C=0,R=0;
+    for(let i=1;i<len-1;i++){
+        let i_mirror=2*C-i;
+        P[i]=(R>i)?Math.min(R-i,P[i_mirror]):0;
+
+        while(T[i+1+P[i]]==T[i-1-P[i]]){
+            P[i]++;
+        }
+
+        if(i+P[i]>R){
+            C=i;
+            R=i+P[i];
+        }
+    }
+  let maxLen=0;
+    let centerIndex=0;
+    for(let i=0;i<len-1;i++){
+        if(P[i]>maxLen){
+            maxLen=P[i];
+            centerIndex=i;
+        }
+    }
+    return str.substr((centerIndex-1-maxLen)/2,maxLen);
+}
+
+
+
+// console.log(___longestPalindrome('abcccddddd'))
